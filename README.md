@@ -6,7 +6,7 @@ R2D2での解析はPythonが推奨されるが、経過的措置としてIDL解�
 R2D2 IDLでは以下の関数を提供する。使用には、r2d2_で始まるプログラムをIDLのパスの通ったディレクトリに配置すること
 
 ***
-### r2d2_read_init, *dir*
+### r2d2_read_init(*dir*)
 
 <dl>
 <dt>parameter</dt>
@@ -19,7 +19,7 @@ R2D2 IDLでは以下の関数を提供する。使用には、r2d2_で始まる�
 この戻り値は、他の関数への入力として使われる。
 
 ***
-### r2d2_read_qq_select, *dir*, *xs*, *n*
+### r2d2_read_qq_select(*dir*, *xs*, *n*)
 
 <dl>
 <dt>parameter</dt> 
@@ -33,7 +33,7 @@ R2D2 IDLでは以下の関数を提供する。使用には、r2d2_で始まる�
 ある高さの計算結果を読み込むときに使う関数。最もよく使われる。
 
 ***
-### r2d2_read_qq, *dir*, *n*
+### r2d2_read_qq(*dir*, *n*)
 
 <dl>
 <dt>parameter</dt> 
@@ -46,7 +46,7 @@ R2D2 IDLでは以下の関数を提供する。使用には、r2d2_で始まる�
 計算領域全体を読み込むための関数。読み込みにはしばしば時間がかかる。
 
 ***
-### r2d2_read_tau, *dir*, *n*
+### r2d2_read_tau(*dir*, *n*)
 
 <dl>
 <dt>parameter</dt> 
