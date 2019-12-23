@@ -70,3 +70,18 @@ R2D2 IDLでは以下の関数を提供する。使用には、r2d2_で始まる�
 </dl>
 
 ある時間ステップの時間を読み込んで返す。
+
+***
+### r2d2_read_vc(*dir*, *n*)
+
+<dl>
+<dt>parameter</dt> 
+<dd>dir(str) - データの場所</dd>
+<dd>n (integer) - 読み込む時間ステップ</dd>
+<dt>return</dt>
+<dd>(structure) 解析データを含む構造体</dd>
+</dl>
+
+Fortranの計算中に解析したデータを読み込んで返す
+
+## 使用例
