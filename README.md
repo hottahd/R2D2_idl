@@ -94,12 +94,12 @@ Fortranの計算中に解析したデータを読み込んで返す
 ```IDL
 dir = 'data'
 n = 10
-p = r2d2_read_init(dir) # 初期データの読込
-qq2 = r2d2_read_qq_select(dir,p.rsun,n,p) # 2次元スライスの読込, p.rsunは太陽半径
-qq3 = r2d2_read_qq_select(dir,n,p) # 3次元データの読込
-t = r2d2_read_time(dir,n,p) # 時間の読込
-qqi = r2d2_read_tau(dir,n,p) # 光学的厚さ1, 0.1, 0.01の場所でのデータの読込
-vc = r2d2_read_tau(dir,n,p) # 解析ずみのデータの読込
+p = r2d2_read_init(dir) ;; 初期データの読込
+qq2 = r2d2_read_qq_select(dir,p.rsun,n,p) ;; 2次元スライスの読込, p.rsunは太陽半径
+qq3 = r2d2_read_qq_select(dir,n,p) ;; 3次元データの読込
+t = r2d2_read_time(dir,n,p) ;; 時間の読込
+qqi = r2d2_read_tau(dir,n,p) ;; 光学的厚さ1, 0.1, 0.01の場所でのデータの読込
+vc = r2d2_read_tau(dir,n,p) ;; 解析ずみのデータの読込
 
 end
 ```
