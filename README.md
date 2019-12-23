@@ -85,3 +85,10 @@ R2D2 IDLでは以下の関数を提供する。使用には、r2d2_で始まる�
 Fortranの計算中に解析したデータを読み込んで返す
 
 ## 使用例
+
+```IDL
+dir = 'data'
+p = r2d2_read_init(dir)
+
+end
+```
