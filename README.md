@@ -19,8 +19,9 @@ R2D2 IDLでは以下の関数を提供する。使用には、r2d2_で始まる�
 
 ### r2d2_read_qq_select, *dir*, *xs*, *n*
 
-- parameter :: dir(str) - データの場所
--           :: xs (float) - 読み込む高さ
--           :: n (integer) - 読み込む時間ステップ
+<dt>parameter</dt> 
+<dd>dir(str) - データの場所</dd>
+<dd>xs (float) - 読み込む高さ</dd>
+<dd>n (integer) - 読み込む時間ステップ</dd>
 
 ある高さの計算結果を読み込むときに使うルーチン。最もよく使われる。
