@@ -8,10 +8,10 @@ R2D2 IDLでは以下の関数を提供する。使用には、r2d2_で始まる�
 ### r2d2_read_init, *dir*
 
 <dl>
-<dd>parameter</dd>
- <dt>dir(str) - データの場所</dt>
-<dd>return</dd>
-<dt>(structure) - 計算設定が含まれる構造体</dt>
+<dt>parameter</dt>
+ <dd>dir(str) - データの場所</dd>
+<dt>return</dt>
+<dd>(structure) - 計算設定が含まれる構造体</dd>
 </dl>
 
 解析のはじめに実行する関数。戻り値として、計算設定が含まれる構造体が返される。
