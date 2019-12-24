@@ -1,6 +1,6 @@
 function r2d2_read_vc, dir, n, p
 
-  vc0 = fltarr(p.m2da,p.ix,p.jx)
+  vc0 = fltarr(p.ix,p.jx,p.m2da)
   
   openr,unit,dir+'remap/vla.dac.'+string(n,form='(i8.8)') $
         ,swap_if_little_endian=p.swap,/get_lun
@@ -8,10 +8,10 @@ function r2d2_read_vc, dir, n, p
   free_lun,unit
   close,unit
 
-  vc = create_struct(p.cl[0],vc0[0,*,*])
+  vc = create_struct(p.cl[0],reform(vc0[*,*,0]))
 
   for m = 1,p.m2da-1 do begin
-     vc = create_struct(p.cl[m],vc0[m,*,*],vc)
+     vc = create_struct(p.cl[m],reform(vc0[*,*,m]),vc)
   endfor
   
   return,vc
