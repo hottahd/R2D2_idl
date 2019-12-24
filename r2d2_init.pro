@@ -1,5 +1,5 @@
 ;; This script defines functions for initial reading of basic setup
-function r2d2_read_init, dir
+function r2d2_init, dir
 
   p = create_struct('rsun',6.9598947e10)
   
@@ -90,7 +90,7 @@ function r2d2_read_init, dir
   tmp = ''
   for m = 0,itmp-1 do begin
      readf,unit,tmp
-     p.cl[m] = tmp
+     p.cl[m] = strcompress(tmp,/remove_all)
   endfor
   free_lun,unit
   close,unit

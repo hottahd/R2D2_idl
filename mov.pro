@@ -20,7 +20,7 @@ for n = 0,p.nd-1 do begin
 
    contour,qqi.in,p.y*1.e-8,p.z*1.e-8,min=1.e10,max=3.e10,/fill,/xst,/yst
    contour,qq2.vx,p.y*1.e-8,p.z*1.e-8,min=-3.e5,max=3.e5,/fill,/xst,/yst
-   contour,transpose(vc.tep),p.x-p.rsun,p.z,/fill,/xst,/yst
+   contour,vc.tep,p.x-p.rsun,p.z,/fill,/xst,/yst
    contour,qqi.vx,p.y,p.z,/fill,/xst,/yst
 endfor
 
