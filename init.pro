@@ -1,7 +1,7 @@
 close,/all
-caseid = 'd018'
+caseid = 'd023'
 datadir = '../run/'+caseid+'/data/'
 
-p = r2d2_read_init(datadir)
+p = r2d2_init(datadir)
 
 end

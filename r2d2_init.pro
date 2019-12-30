@@ -18,6 +18,20 @@ function r2d2_init, datadir
   openr,unit,datadir+'param/params.dac',/get_lun
   readf,unit,tmp
   tmp0 = strsplit(tmp,/extract)
+
+  R2D2_idl_ver = 1.2
+  if R2D2_idl_ver ne float(tmp0[2]) then begin
+     print,"#######################################################"
+     print,"#######################################################"
+     print,"### Current R2D2 IDL version is ",R2D2_idl_ver,"."
+     print,"### You use the data from R2D2 version ",float(tmp0[2]),"."
+     print,"### Please use the same version of fortran R2D2."
+     print,"#######################################################"
+     print,"#######################################################"
+     return,0
+  endif
+
+  
   while not eof(unit) do begin
      readf,unit,tmp
      tmp0 = strsplit(tmp,/extract)
