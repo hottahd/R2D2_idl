@@ -1,11 +1,12 @@
 ;; This script defines functions for initial reading of basic setup
-function r2d2_init, dir
+function r2d2_init, datadir
 
   p = create_struct('rsun',6.9598947e10)
+  p = create_struct(p,'datadir',datadir)
   
   ;; read time step parameter
   nd = 1 & ni = 1
-  openr,unit,dir+'param/nd.dac',/get_lun
+  openr,unit,datadir+'param/nd.dac',/get_lun
   readf,unit,nd,ni
   close,unit
 
@@ -14,7 +15,7 @@ function r2d2_init, dir
   tmp = ''
 
   ;; read basic parameters
-  openr,unit,dir+'param/params.dac',/get_lun
+  openr,unit,datadir+'param/params.dac',/get_lun
   readf,unit,tmp
   tmp0 = strsplit(tmp,/extract)
   while not eof(unit) do begin
@@ -46,7 +47,7 @@ function r2d2_init, dir
   gx = dblarr(ixg) & kp = dblarr(ixg) & cp = dblarr(ixg)
   fa = dblarr(ixg) & sa = dblarr(ixg) & xi = dblarr(ixg)
   
-  openr,unit,dir+'back.dac',/f77_unformatted,swap_if_little_endian=p.swap,/get_lun
+  openr,unit,datadir+'param/back.dac',/f77_unformatted,swap_if_little_endian=p.swap,/get_lun
   readu,unit,x,y,z,pr0,te0,ro0,se0,en0,op0,tu0 $
         ,dsedr0,dtedr0,dprdro,dprdse,dtedro,dtedse,dendro,dendse $
         ,gx,kp,cp,fa,sa,xi
@@ -80,7 +81,7 @@ function r2d2_init, dir
   p = create_struct(p,'xi',xi[p.margin:ixg-p.margin-1]) ;; RSST factor
 
   ;; read vc related information
-  openr,unit,dir+'remap/c.dac',/get_lun
+  openr,unit,datadir+'remap/vl/c.dac',/get_lun
 
   itmp = 1
   readf,unit,itmp
@@ -103,7 +104,7 @@ function r2d2_init, dir
   ir = lonarr(p.npe) & jr = lonarr(p.npe)
   i2ir = lonarr(ixg) & j2jr = lonarr(jxg)
   
-  openr,unit,dir+'remap/remap_info.dac',swap_if_little_endian=p.swap,/get_lun
+  openr,unit,datadir+'remap/remap_info.dac',swap_if_little_endian=p.swap,/get_lun
   readu,unit,iss,iee,jss,jee,iixl,jjxl,np_ijr,ir,jr,i2ir,j2jr
   free_lun,unit
   close,unit

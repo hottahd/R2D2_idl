@@ -1,4 +1,4 @@
-function r2d2_read_qq, dir,n,p
+function r2d2_read_qq, n,p
 
   qq = create_struct('ro',fltarr(p.ix,p.jx,p.kx))
   qq = create_struct('vx',fltarr(p.ix,p.jx,p.kx),qq)
@@ -19,7 +19,7 @@ function r2d2_read_qq, dir,n,p
         prl = fltarr(p.iixl[np0],p.jjxl[np0],p.kx)
         tel = fltarr(p.iixl[np0],p.jjxl[np0],p.kx)
         opl = fltarr(p.iixl[np0],p.jjxl[np0],p.kx)
-        openr,unit,dir+'remap/qq.dac.'+string(n,form='(i8.8)')+'.'+string(np0,form='(i8.8)') $
+        openr,unit,p.datadir+'remap/qq/qq.dac.'+string(n,form='(i8.8)')+'.'+string(np0,form='(i8.8)') $
               ,swap_if_little_endian=swap,/get_lun
         readu,unit,qql,prl,tel,opl
         free_lun,unit

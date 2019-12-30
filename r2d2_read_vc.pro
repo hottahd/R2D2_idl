@@ -1,8 +1,8 @@
-function r2d2_read_vc, dir, n, p
+function r2d2_read_vc, n, p
 
   vc0 = fltarr(p.ix,p.jx,p.m2da)
   
-  openr,unit,dir+'remap/vla.dac.'+string(n,form='(i8.8)') $
+  openr,unit,p.datadir+'remap/vl/vla.dac.'+string(n,form='(i8.8)') $
         ,swap_if_little_endian=p.swap,/get_lun
   readu,unit,vc0
   free_lun,unit
@@ -16,5 +16,3 @@ function r2d2_read_vc, dir, n, p
   
   return,vc
 end
-        
-  

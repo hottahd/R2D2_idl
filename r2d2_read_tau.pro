@@ -1,4 +1,4 @@
-function r2d2_read_tau, dir,n,p
+function r2d2_read_tau, n,p
 
   qq = create_struct('in',fltarr(p.jx,p.kx))
   qq = create_struct('ro',fltarr(p.jx,p.kx),qq)
@@ -39,7 +39,7 @@ function r2d2_read_tau, dir,n,p
   
   qq_in = fltarr(p.m_tu,p.m_in,p.jx,p.kx)
   
-  openr,unit,dir+'remap/qq_tu.dac.'+string(n,form='(i8.8)') $
+  openr,unit,p.datadir+'tau/qq.dac.'+string(n,form='(i8.8)') $
         ,swap_if_little_endian=p.swap,/get_lun
   readu,unit,qq_in
   free_lun,unit

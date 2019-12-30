@@ -1,7 +1,7 @@
 close,/all
 caseid = 'd018'
-dir = '../run/'+caseid+'/data/'
+datadir = '../run/'+caseid+'/data/'
 
-p = r2d2_read_init(dir)
+p = r2d2_read_init(datadir)
 
 end
