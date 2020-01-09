@@ -38,6 +38,8 @@ function r2d2_init, datadir
 
      if tmp0[2] eq 'i' then p = create_struct(p,tmp0[1],long64(tmp0[0]))
      if tmp0[2] eq 'd' then p = create_struct(p,tmp0[1],double(tmp0[0]))
+     if tmp0[2] eq 'c' then p = create_struct(p,tmp0[1],tmp0[0])
+     if tmp0[2] eq 'l' then p = create_struct(p,tmp0[1],tmp0[0])
      
   endwhile
   free_lun,unit
