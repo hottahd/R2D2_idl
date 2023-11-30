@@ -19,7 +19,7 @@ function r2d2_init, datadir
   readf,unit,tmp
   tmp0 = strsplit(tmp,/extract)
 
-  R2D2_idl_ver = 1.2
+  R2D2_idl_ver = 2.0
   if R2D2_idl_ver ne float(tmp0[2]) then begin
      print,"#######################################################"
      print,"#######################################################"
@@ -66,7 +66,7 @@ function r2d2_init, datadir
   openr,unit,datadir+'param/back.dac',/f77_unformatted,swap_if_little_endian=p.swap,/get_lun
   readu,unit,x,y,z,pr0,te0,ro0,se0,en0,op0,tu0 $
         ,dsedr0,dtedr0,dprdro,dprdse,dtedro,dtedse,dendro,dendse $
-        ,gx,kp,cp,fa,sa,xi
+        ,gx,cp,fa,sa,xi
   free_lun,unit
   close,unit
 

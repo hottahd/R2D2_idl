@@ -23,7 +23,7 @@ for n = p.nd-1,p.nd-1 do begin
            ,title='Emergent intensity',ytitle='Mm',nlevels=200
    contour,qq2.vx,p.y*1.e-8,p.z*1.e-8,min=-5.e5,max=5.e5,/fill,/xst,/yst $
            ,title='vx at 2 Mm depth',nlevels=200
-   contour,transpose((vc.sep-vc.sem)/vc.serms),p.z*1.e-8,(p.x-p.rsun)*1.e-8 $
+   contour,transpose((vc.se_xy-vc.sem)/vc.serms),p.y*1.e-8,(p.x-p.rsun)*1.e-8 $
            ,max=6.,min=-6.,/fill,/xst,/yst,nlevels=200 $
            ,title='(s1-<s1>)/srms',xtitle='Mm',ytitle='Mm'
    vxrms = sqrt(mean(vc.vxrms^2,dimension=2))
